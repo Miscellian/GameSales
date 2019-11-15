@@ -1,0 +1,3 @@
+# BOT_TOKEN - your env var with token
+token: BOT_TOKEN
+start_message: "hi"
