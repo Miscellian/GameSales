@@ -3,11 +3,12 @@ from telegram.ext import MessageHandler, CommandHandler, Filters
 from app_settings import AppSettings
 import os
 
-cfg = AppSettings(configs_path='config')
+# CONFIG_PATH - env var for your config path
+cfg = AppSettings(configs_path=os.environ[("CONFIG_PATH")])
 
 class TelegramBot:
-    def __init__(self):
-        self.__updater = Updater(token=os.environ[cfg.token], use_context=True)
+    def __init__(self, token):
+        self.__updater = Updater(token=token, use_context=True)
         self.__dispatcher = self.__updater.dispatcher
 
     def start(self):

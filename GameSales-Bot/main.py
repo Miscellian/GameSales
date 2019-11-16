@@ -1,8 +1,10 @@
 from app_settings import AppSettings
 from bot import TelegramBot
+import os
 
-cfg = AppSettings(configs_path='config')
+# CONFIG_PATH - env var for your config path
+cfg = AppSettings(configs_path=os.environ[("CONFIG_PATH")])
 
-bot = TelegramBot()
+bot = TelegramBot(os.environ[cfg.token])
 bot.start()
 
