@@ -2,6 +2,7 @@ from telegram.ext import Updater
 from telegram.ext import MessageHandler, CommandHandler, Filters
 from logging import DEBUG, INFO, WARN, ERROR, CRITICAL
 import logging
+import telegram
 import logging.config
 import yaml
 from steam_api import SteamAPI
@@ -46,6 +47,8 @@ class TelegramBot:
             chat_id=update.effective_chat.id, text=cfg['bot']['start_message'])
 
     def __get_sale_message(self, update, context):
+        user = update.message.from_user
+        message = update.message.text
         logger.info("Text: %s. From: %s %s, @%s, %d" % (message, user.first_name, user.last_name, user.username, user.id))
         if (len(context.args) == 0):
             context.bot.send_message(chat_id=update.effective_chat.id, text="Invalid command syntax. Try: /getSale gameName")
@@ -59,11 +62,11 @@ class TelegramBot:
                 initial = price_overview['initial']
                 final = price_overview['final']
                 discount = price_overview['discount_percent']
-                price_message = str(final // 100) + currency
+                price_message = "<b>Now</b>: %d%s\n" % (final // 100, currency)
                 if (discount != 0):
-                    price_message += "Discount: " + discount
-                    price_message += initial + currency
-                context.bot.send_message(chat_id=update.effective_chat.id, text=price_message)
+                    price_message += "<b>Discount</b>: %d%%\n" % (discount)
+                    price_message += "<b>Initial</b>: %d%s" % (initial // 100, currency) 
+                context.bot.send_message(chat_id=update.effective_chat.id, text=price_message, parse_mode=telegram.ParseMode.HTML)
 
     def stop(self):
         self.__updater.idle()

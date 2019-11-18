@@ -271,3 +271,138 @@
 2019-11-18 15:52:38,304 steam_api:17 [INFO] Steam API Service initialized
 2019-11-18 15:53:08,451 steam_api:17 [INFO] Steam API Service initialized
 2019-11-18 15:53:21,668 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 15:55:27,768 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 15:56:59,271 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 15:57:50,880 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 15:58:31,085 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 15:58:49,963 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 15:58:52,343 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 15:59:15,150 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V\
+2019-11-18 15:59:16,040 steam_api:34 [DEBUG] Id for game: None
+2019-11-18 15:59:16,866 steam_api:39 [DEBUG] %d format: a number is required, not NoneType
+2019-11-18 15:59:16,867 steam_api:40 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 15:59:17,003 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 15:59:17,887 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 15:59:20,599 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 15:59:21,741 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 15:59:51,300 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 15:59:52,534 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:00:00,215 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:00:01,119 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:00:51,404 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:00:54,816 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:00:59,781 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:03:34,505 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:03:38,928 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:03:39,937 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:03:50,669 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:03:55,235 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:03:56,129 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:04:11,758 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:04:14,158 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:04:17,783 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:05:14,844 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:05:19,330 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:05:20,435 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:05:20,974 steam_api:43 [DEBUG] 'data'
+2019-11-18 16:05:20,974 steam_api:44 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 16:06:38,763 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:06:40,037 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:06:47,370 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:07:00,353 steam_api:44 [DEBUG] 'data'
+2019-11-18 16:07:10,520 steam_api:45 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 16:08:11,228 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:08:12,816 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:10:05,794 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:21:02,727 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:21:12,459 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:21:44,219 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:21:47,875 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:22:02,504 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:22:04,260 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:22:06,699 steam_api:34 [DEBUG] Id for game: None
+2019-11-18 16:22:07,244 steam_api:39 [DEBUG] %d format: a number is required, not NoneType
+2019-11-18 16:22:07,245 steam_api:40 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 16:23:58,270 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:24:04,393 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:24:44,782 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:24:47,059 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:24:47,060 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:24:58,126 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:24:58,648 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:24:58,648 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:25:48,033 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:25:54,407 steam_api:32 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:25:54,411 steam_api:34 [DEBUG] Id for game: 362003
+2019-11-18 16:27:17,538 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:27:28,975 steam_api:34 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:27:43,284 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:27:43,814 steam_api:34 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:27:53,666 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 16:27:54,201 steam_api:34 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:28:01,801 steam_api:36 [DEBUG] Id for game: None
+2019-11-18 16:28:02,365 steam_api:41 [DEBUG] %d format: a number is required, not NoneType
+2019-11-18 16:28:02,365 steam_api:42 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 16:29:52,867 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:30:09,980 steam_api:47 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:30:12,053 steam_api:49 [DEBUG] Id for game: None
+2019-11-18 16:30:12,621 steam_api:54 [DEBUG] %d format: a number is required, not NoneType
+2019-11-18 16:30:12,623 steam_api:55 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 16:31:45,805 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:31:56,087 steam_api:47 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:32:30,563 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:32:34,608 steam_api:47 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:32:36,616 steam_api:49 [DEBUG] Id for game: None
+2019-11-18 16:32:37,175 steam_api:54 [DEBUG] %d format: a number is required, not NoneType
+2019-11-18 16:32:37,175 steam_api:55 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 16:32:59,084 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:32:59,611 steam_api:47 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:33:01,702 steam_api:49 [DEBUG] Id for game: None
+2019-11-18 16:33:02,248 steam_api:54 [DEBUG] %d format: a number is required, not NoneType
+2019-11-18 16:33:02,251 steam_api:55 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 16:35:33,025 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:35:35,828 steam_api:47 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:35:38,071 steam_api:50 [DEBUG] Id for game: 271590
+2019-11-18 16:36:00,457 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:36:01,869 steam_api:47 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:36:25,315 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:36:26,911 steam_api:47 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:36:29,535 steam_api:50 [DEBUG] Id for game: 271590
+2019-11-18 16:36:29,537 steam_api:58 [INFO] Game found. id: 271590, name: "Grand Theft Auto V"
+2019-11-18 16:36:40,033 steam_api:47 [DEBUG] Called with args: Terraia
+2019-11-18 16:36:40,869 steam_api:53 [DEBUG] 'NoneType' object is not iterable
+2019-11-18 16:36:40,871 steam_api:54 [INFO] Game with this name doesn't exists in Steam
+2019-11-18 16:36:45,312 steam_api:47 [DEBUG] Called with args: Terraria
+2019-11-18 16:36:46,840 steam_api:50 [DEBUG] Id for game: 105600
+2019-11-18 16:36:46,842 steam_api:58 [INFO] Game found. id: 105600, name: "Terraria"
+2019-11-18 16:37:24,962 steam_api:47 [DEBUG] Called with args: Supraland
+2019-11-18 16:37:26,581 steam_api:50 [DEBUG] Id for game: 813630
+2019-11-18 16:37:26,581 steam_api:58 [INFO] Game found. id: 813630, name: "Supraland"
+2019-11-18 16:38:14,023 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:38:23,682 steam_api:47 [DEBUG] Called with args: Supraland
+2019-11-18 16:38:25,119 steam_api:50 [DEBUG] Id for game: 813630
+2019-11-18 16:38:25,120 steam_api:58 [INFO] Game found. id: 813630, name: "Supraland"
+2019-11-18 16:38:37,555 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:38:45,199 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:39:01,167 steam_api:47 [DEBUG] Called with args: Supraland
+2019-11-18 16:39:14,691 steam_api:50 [DEBUG] Id for game: 813630
+2019-11-18 16:39:24,651 steam_api:58 [INFO] Game found. id: 813630, name: "Supraland"
+2019-11-18 16:41:25,689 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:41:30,349 steam_api:47 [DEBUG] Called with args: Supraland
+2019-11-18 16:41:31,821 steam_api:50 [DEBUG] Id for game: 813630
+2019-11-18 16:41:31,824 steam_api:58 [INFO] Game found. id: 813630, name: "Supraland"
+2019-11-18 16:42:51,952 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:42:56,168 steam_api:47 [DEBUG] Called with args: Supraland
+2019-11-18 16:42:57,705 steam_api:50 [DEBUG] Id for game: 813630
+2019-11-18 16:42:57,706 steam_api:58 [INFO] Game found. id: 813630, name: "Supraland"
+2019-11-18 16:43:59,375 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:44:00,066 steam_api:47 [DEBUG] Called with args: Supraland
+2019-11-18 16:44:01,410 steam_api:50 [DEBUG] Id for game: 813630
+2019-11-18 16:44:01,411 steam_api:58 [INFO] Game found. id: 813630, name: "Supraland"
+2019-11-18 16:44:29,725 steam_api:29 [INFO] Steam API Service initialized
+2019-11-18 16:46:08,184 steam_api:47 [DEBUG] Called with args: Grand Theft Auto V
+2019-11-18 16:46:10,644 steam_api:50 [DEBUG] Id for game: 271590
+2019-11-18 16:46:10,647 steam_api:58 [INFO] Game found. id: 271590, name: "Grand Theft Auto V"
+2019-11-18 16:46:37,620 steam_api:47 [DEBUG] Called with args: Supraland
+2019-11-18 16:46:39,215 steam_api:50 [DEBUG] Id for game: 813630
+2019-11-18 16:46:39,216 steam_api:58 [INFO] Game found. id: 813630, name: "Supraland"
