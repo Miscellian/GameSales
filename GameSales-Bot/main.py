@@ -1,10 +1,10 @@
-from app_settings import AppSettings
+import app_settings
 from bot import TelegramBot
-import os
+import logging
 
-# CONFIG_PATH - env var for your config path
-cfg = AppSettings(configs_path=os.environ[("CONFIG_PATH")])
+# export CONFIG_ENV=config
+cfg = app_settings.AppSettings(env_name='CONFIG_ENV')
 
-bot = TelegramBot(os.environ[cfg.token])
+bot = TelegramBot(cfg.main.token)
 bot.start()
 

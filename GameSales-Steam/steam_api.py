@@ -1,4 +1,16 @@
 import requests
+import logging
+from app_settings import AppSettings
+
+logger = logging.getLogger('steam_logger')
+logger.setLevel(logging.DEBUG)
+ch = logging.FileHandler('logs/steam_api.log')
+ch.setLevel(logging.DEBUG)
+formatter = logging.Formatter(
+    '%(asctime)s %(module)s:%(lineno)d [%(levelname)s] %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
+
 
 class SteamAPI:
 
@@ -19,15 +31,17 @@ class SteamAPI:
         return json
 
     def getPriceOverviewForGame(self, name):
+        logger.debug(u"Called with args:" + name)
         id = self.__getGameIdByName(name)
-        app_details = self.__getAppDetailsForGame(id)
-        price_overview = app_details['%d' % id]['data']['price_overview']
-        return price_overview
+        logger.debug(u"Id for game: " + str(id))
+        try:
+            app_details = self.__getAppDetailsForGame(id)
+            price_overview = app_details['%d' % id]['data']['price_overview']
+        except TypeError as e:
+            logging.debug(e.__str__())
+            logging.info(u"Game with this name doesn't exists in Steam")
+            price_overview = []
+            return price_overview
 
-        
-api = SteamAPI()
-price_overview = api.getPriceOverviewForGame("Street Fighter V")
-price_message = "Discount: " + str(price_overview['discount_percent']) + "%\n"
-price_message += "Price now: " + price_overview['final_formatted'] + "\n"
-price_message += "Price without discount: " + price_overview['initial_formatted']
-print(price_message)
+        logger.info("Game found. id: " + str(id) + ", name: \"" + name + "\"")
+        return price_overview
