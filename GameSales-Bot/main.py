@@ -1,10 +1,9 @@
-import app_settings
 from bot import TelegramBot
-import logging
+import yaml
 
-# export CONFIG_ENV=config
-cfg = app_settings.AppSettings(env_name='CONFIG_ENV')
+with open("config/config.yml", 'r') as ymlfile:
+    cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
-bot = TelegramBot(cfg.main.token)
+bot = TelegramBot(cfg['token'])
 bot.start()
-
+bot.stop()

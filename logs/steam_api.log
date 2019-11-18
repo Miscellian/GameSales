@@ -1,0 +1,4 @@
+2019-11-18 13:49:58,826 steam_api:17 [INFO] Steam API Service initialized
+2019-11-18 13:49:58,828 steam_api:32 [DEBUG] Called with args:Terraria
+2019-11-18 13:49:59,748 steam_api:34 [DEBUG] Id for game: 105600
+2019-11-18 13:50:00,414 steam_api:44 [INFO] Game found. id: 105600, name: "Terraria"
