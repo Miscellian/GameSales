@@ -20,7 +20,7 @@ class SteamAPI:
         method = "ISteamApps/GetAppList/v0002"
         json = requests.get(self.api_url + method).json()
         for game in json['applist']['apps']:
-            if (name == game['name']):
+            if (name.lower() == game['name'].lower()):
                 return game['appid']
 
     def __getAppDetailsForGame(self, id):
@@ -29,7 +29,7 @@ class SteamAPI:
         return json
 
     def getPriceOverviewForGame(self, name):
-        logger.debug(u"Called with args:" + name)
+        logger.debug(u"Called with args: " + name)
         id = self.__getGameIdByName(name)
         logger.debug(u"Id for game: " + str(id))
         try:
