@@ -4,42 +4,60 @@ using MainAPI.Controllers;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.TestHost;
+using System.Net.Http;
+using Microsoft.AspNetCore;
+using MainAPI;
+using Microsoft.AspNetCore.Hosting;
+using MainAPI.Services;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using MainAPI.Model;
 
 namespace Tests
 {
     public class SalesAcessTests
     {
-        private UserManager<IdentityUser> userManager;
+        private TestServer server;
+        private HttpClient client;
 
         public SalesAcessTests()
         {
-            userManager = new FakeUserManager(UserDBMock.GetContextMock().Users.FirstOrDefault());
+            var builder = WebHost.CreateDefaultBuilder()
+                .UseStartup<Startup>();
+
+
+            server = new TestServer(builder);
+            client = server.CreateClient();
         }
         [Fact]
-        public void UserIsRedirectedToNintendoSales()
+        public async void UserIsRedirectedToNintendoSales()
         {
-            SalesController controller = new SalesController(userManager);
-            RedirectResult result = (RedirectResult)controller.NintendoSales();
+            var expected = await new NintendoManagerConnector().GetSales();
 
-            Assert.Equal("/sales/nintendo", result.Url);
-        }
+            var jsonResult = await client.GetStringAsync("/api/sales/nintendo");
 
-        [Fact]
-        public void UserIsRedirectedToSteamSales()
-        {
-            SalesController controller = new SalesController(userManager);
-            RedirectResult result = (RedirectResult)controller.SteamSales();
-
-            Assert.Equal("/sales/steam", result.Url);
+            Assert.Equal(expected, JsonConvert.DeserializeObject<IEnumerable<Sale>>(jsonResult));
         }
 
         [Fact]
-        public void UserIsRedirectedToPSSToreSales()
+        public async void UserIsRedirectedToSteamSales()
         {
-            SalesController controller = new SalesController(userManager);
-            RedirectResult result = (RedirectResult)controller.PSStoreSales();
+            var expected = await new SteamManagerConnector().GetSales();
 
-            Assert.Equal("/sales/ps", result.Url);
+            var jsonResult = await client.GetStringAsync("/api/sales/steam");
+
+            Assert.Equal(expected, JsonConvert.DeserializeObject<IEnumerable<Sale>>(jsonResult));
+        }
+
+        [Fact]
+        public async void UserIsRedirectedToPSSToreSales()
+        {
+            var expected = await new PSStoreManagerConnector().GetSales();
+
+            var jsonResult = await client.GetStringAsync("/api/sales/psstore");
+
+            Assert.Equal(expected, JsonConvert.DeserializeObject<IEnumerable<Sale>>(jsonResult));
         }
     }
 }

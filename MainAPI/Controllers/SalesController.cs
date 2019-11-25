@@ -6,41 +6,38 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using MainAPI.Services;
 
 namespace MainAPI.Controllers
 {
-    [Route("sales")]
+    [Route("/api/sales")]
     public class SalesController : Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
+        private readonly SteamManagerConnector steamManager;
+        private readonly NintendoManagerConnector nintendoManager;
+        private readonly PSStoreManagerConnector psStoreManager;
 
-        public SalesController(UserManager<IdentityUser> userManager)
+        public SalesController(SteamManagerConnector steamManager, NintendoManagerConnector nintendoManager, PSStoreManagerConnector psStoreManager)
         {
-            this.userManager = userManager;
+            this.steamManager = steamManager;
+            this.nintendoManager = nintendoManager;
+            this.psStoreManager = psStoreManager;
         }
 
-        public IActionResult NintendoSales()
+        [HttpGet("nintendo")]
+        public async Task<JsonResult> NintendoSales()
         {
-            return Redirect("/sales/nintendo");
+            return new JsonResult(await nintendoManager.GetSales());
         }
-        public IActionResult SteamSales()
+        [HttpGet("steam")]
+        public async Task<JsonResult> SteamSales()
         {
-            return Redirect("/sales/steam");
+            return new JsonResult(await steamManager.GetSales());
         }
-        public IActionResult PSStoreSales()
+        [HttpGet("psstore")]
+        public async Task<JsonResult> PSStoreSales()
         {
-            return Redirect("/sales/ps");
+            return new JsonResult(await psStoreManager.GetSales());
         }
-
-
-        private async Task<bool> IsRegistered()
-        {
-            var claims = User.Claims;
-            var user = await userManager.FindByEmailAsync(User.Claims.Where(c => c.Type == ClaimTypes.Email).FirstOrDefault().ToString());
-            return user != null;
-        }
-
     }
 }

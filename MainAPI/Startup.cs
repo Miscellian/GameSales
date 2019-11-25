@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MainAPI.DatabaseContext;
 using MainAPI.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -16,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
+using MainAPI.Services;
 
 namespace MainAPI
 {
@@ -31,28 +31,22 @@ namespace MainAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<UserDB>(o => o.UseInMemoryDatabase("Users"));
+            services.AddSingleton<SteamManagerConnector>();
+            services.AddSingleton<NintendoManagerConnector>();
+            services.AddSingleton<PSStoreManagerConnector>();
+            services.AddSingleton<UserService>();
 
-            var jwtSettings = new JwtOptions();
-            Configuration.Bind(nameof(jwtSettings), jwtSettings);
-            services.AddSingleton(jwtSettings);
-
-            services.AddAuthentication(co =>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
-                co.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                co.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                co.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(x =>
-            {
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
+                options.TokenValidationParameters = new TokenValidationParameters
                 {
+                    ValidateIssuer = true,
+                    ValidIssuer = JwtOptions.ISSUER,
+                    ValidateAudience = true,
+                    ValidAudience = JwtOptions.AUDIENCE,
+                    ValidateLifetime = true,
+                    IssuerSigningKey = JwtOptions.GetSymmetricSecurityKey(),
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    RequireExpirationTime = false,
-                    ValidateLifetime = true
                 };
             });
         }
@@ -68,6 +62,7 @@ namespace MainAPI
             app.UseRouting();
 
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

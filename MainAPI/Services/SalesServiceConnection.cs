@@ -14,6 +14,8 @@ namespace MainAPI.Services
             address = uri;
         }
 
+        public SalesServiceConnection() { }
+
         public async Task<IEnumerable<Sale>> Request()
         {
             throw new NotImplementedException();

@@ -13,10 +13,10 @@ namespace MainAPI.Services
         {
             serviceConnection = new SalesServiceConnection(uri);
         }
-
-        public async Task<IEnumerable<Sale>> GetSales()
+        public SalesManagerConnector()
         {
-            return await serviceConnection.Request();
         }
+
+        public abstract Task<IEnumerable<Sale>> GetSales();
     }
 }

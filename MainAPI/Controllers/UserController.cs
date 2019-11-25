@@ -1,46 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using MainAPI.DTO;
+using MainAPI.Model;
+using MainAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MainAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/api/user")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly UserService userManager;
 
-        public UserController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public UserController(UserService userManager)
         {
             this.userManager = userManager;
-            this.signInManager = signInManager;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Login([FromBody] LogInDTO logIn)
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] User user)
         {
-            var res = await signInManager.PasswordSignInAsync(logIn.Username, logIn.Password, true, false);
-            if (res.Succeeded)
+            Console.WriteLine(user.Password);
+            Console.WriteLine(user.UserName);
+            var res = userManager.AuthenticateUser(user.UserName, user.Password);
+            if (res)
             {
-                return Redirect("/home");
+                var response = (new JwtSecurityTokenHandler()).WriteToken(UserService.CreateToken(user));
+                return new JsonResult(response);
             } else
             {
-                return Redirect("/error");
+                return new BadRequestResult();
             }
         }
 
-        [HttpGet]
+        [HttpGet("settings")]
+        [Authorize(AuthenticationSchemes ="Bearer")]
         public async Task<IActionResult> Settings()
         {
-            return User.Identity.IsAuthenticated
-                ? Redirect("/settings")
-                : Redirect("/login");
+            return new OkResult();
         }
     }
 }
